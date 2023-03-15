@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://wp-env/./theme/js/main.js?");
+eval("console.log('this is js file!');\n\n//# sourceURL=webpack://wp-env/./theme/js/main.js?");
 
 /***/ })
 

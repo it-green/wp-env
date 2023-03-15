@@ -10,13 +10,13 @@ module.exports = {
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: {
     'main': path.resolve(__dirname, './theme/js/main.js'),
-    'main.css': path.resolve(__dirname, './theme/scss/main.scss')
+    'main.css': path.resolve(__dirname, './theme/scss/style.scss')
   },
 
   // ファイルの出力設定
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, './theme/dist/'),
+    path: path.resolve(__dirname, './theme/assets/'),
   },
 
   module: {
@@ -57,7 +57,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
-        '**/*',
+        'css/**/*',
+        'js/**/*',
       ],
     }),
     new FixStyleOnlyEntriesPlugin(),
