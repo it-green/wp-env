@@ -1,0 +1,25 @@
+{
+  "core": null,
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/query-monitor.3.7.1.zip",
+    "https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.9.zip",
+    "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.0.7.zip",
+    "https://downloads.wordpress.org/plugin/lazy-blocks.3.3.0.zip",
+    "https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip"
+  ],
+  "themes": [
+    "./theme"
+  ],
+  "port": 10011,
+  "env": {
+    "tests": {
+      "port": 10012
+    }
+  },
+  "config": {
+    "WP_DEBUG": true
+  },
+  "mappings": {
+    "sql": "./sql"
+  }
+}

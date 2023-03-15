@@ -1,0 +1,8 @@
+@use "../mixin/responsive" as *;
+
+
+body {
+  @include responsive(md) {
+    display: none;
+  }
+}
