@@ -3,9 +3,10 @@
 ## インストール
 ```
 $ npm i
+$ npm run wp-env:start
 ```
 
-## 実行
+## 開発
 ```
 $ npm run dev
 ```

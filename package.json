@@ -11,7 +11,7 @@
     "wp-env:destroy": "wp-env destroy",
     "sql:export": "wp-env run cli wp db export sql/wpenv.sql",
     "sql:import": "wp-env run cli wp db import sql/wpenv.sql",
-    "dev": "run-s sql:import wp-env:update webpack:development",
+    "dev": "run-s wp-env:start sql:import webpack:development",
     "build": "webpack --mode development && node ./build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
