@@ -20,6 +20,8 @@
     "WP_DEBUG": true
   },
   "mappings": {
-    "sql": "./sql"
+    "sql": "./sql",
+    "wp-content/uploads": "./uploads",
+    "php.ini": "./php.ini"
   }
 }
