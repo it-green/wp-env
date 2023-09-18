@@ -1,8 +1,12 @@
 // base
+@forward "./base/base";
 
 // plugins
+@forward "./plugins/reset.scss";
 
 // components
+@forward "./components/header";
+@forward "./components/footer";
 
 // layout
 @forward "./layout/top";

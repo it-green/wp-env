@@ -7,3 +7,6 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <header class="container header">
+    <p>ヘッダーです</p>
+  </header>

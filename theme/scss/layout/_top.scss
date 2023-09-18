@@ -1,8 +1,14 @@
-@use "../mixin/responsive" as *;
+@use "../base/variables" as *;
 
+.fv {
+  background-color: $black;
 
-body {
-  @include responsive(md) {
-    display: none;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    color: $white;
+    font-weight: $font-en;
   }
 }

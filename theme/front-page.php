@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 
 <main>
-  <p>hogehoge</p>
+  <section id="fv" class="container fv">
+    <div class="content">
+      <p>This is FV!</p>
+    </div>
+  </section>
 </main>
 
 <?php get_footer(); ?>
