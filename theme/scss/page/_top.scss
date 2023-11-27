@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+@use "../mixins" as *;
+
+.fv {
+  background-color: $color-black;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    color: $color-white;
+    font-weight: $font-roboto;
+  }
+}
