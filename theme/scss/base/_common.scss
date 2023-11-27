@@ -1,6 +1,5 @@
-@use "./variables" as *;
-@use "../mixin/font" as *;
-@use "../mixin/responsive" as *;
+@use "../abstracts" as *;
+@use "../mixins" as *;
 
 html {
   font-size: 16px;
@@ -15,9 +14,9 @@ html {
 }
 
 body {
-  color: $black;
+  color: $color-black;
   font-size: 1rem;
-  font-family: $font-ja;
+  font-family: $font-noto-sans;
   font-weight: $font-regular;
   line-height: 1;
 }

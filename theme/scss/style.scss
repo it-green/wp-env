@@ -1,12 +1,10 @@
 // base
-@forward "./base/base";
-
-// plugins
-@forward "./plugins/reset.scss";
-
+@use "./base";
+// plugin
+@use "./plugins";
 // components
-@forward "./components/header";
-@forward "./components/footer";
-
+@use "./components";
 // layout
-@forward "./layout/top";
+@use "./layout";
+// page
+@use "./page";

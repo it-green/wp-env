@@ -1,41 +1,6 @@
 /*!*********************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[4]!./theme/scss/style.scss ***!
   \*********************************************************************************************************************************************************************************************************************************/
-html {
-  font-size: 16px;
-}
-@media (min-width: 375px) {
-  html {
-    font-size: 16px;
-    font-size: 4.2666666667vw;
-  }
-}
-@media (min-width: 720px) {
-  html {
-    font-size: 16px;
-    font-size: 2.2222222222vw;
-  }
-}
-
-body {
-  color: #000;
-  font-size: 1rem;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.container {
-  width: 100%;
-}
-
-.content {
-  margin: 0 auto;
-  width: 80vw;
-  padding-right: 5rem;
-  padding-left: 5rem;
-}
-
 /*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -407,6 +372,41 @@ th {
 th {
   text-align: left;
   font-weight: bold;
+}
+
+html {
+  font-size: 16px;
+}
+@media (min-width: 375px) {
+  html {
+    font-size: 16px;
+    font-size: 4.2666666667vw;
+  }
+}
+@media (min-width: 720px) {
+  html {
+    font-size: 16px;
+    font-size: 2.2222222222vw;
+  }
+}
+
+body {
+  color: #000;
+  font-size: 1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.container {
+  width: 100%;
+}
+
+.content {
+  margin: 0 auto;
+  width: 80vw;
+  padding-right: 5rem;
+  padding-left: 5rem;
 }
 
 .header {
