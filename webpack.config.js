@@ -1,12 +1,13 @@
-const { webpack } = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { SourceMap } = require('module');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'source-map',
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: {
     'main': path.resolve(__dirname, './theme/js/main.js'),
@@ -29,7 +30,12 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              url: true,
+              sourceMap: true,
+              importLoaders: 2
+            },
           },
           {
             loader: 'postcss-loader'
@@ -40,9 +46,9 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
             }
-          }
+          },
         ],
       }
     ]
@@ -50,7 +56,7 @@ module.exports = {
 
   optimization: {
     minimizer: [new TerserPlugin({
-      extractComments: false,
+      extractComments: true,
     })],
   },
 
@@ -61,13 +67,29 @@ module.exports = {
         'js/**/*',
       ],
     }),
+
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name]'
     }),
-  ],
 
-  watchOptions: {
-    ignored: /node_modules/
-  }
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      files: ['./**/*'],
+      port: 3000,
+      proxy: {
+        target: 'http://localhost:10011',
+      },
+      watchOptions: {
+        ignored: ['webpack.config.js', 'node_modules', 'sql', 'package.json', 'package-lock.json', 'php.ini', 'readme.md'],
+      },
+      open: true,
+      ghostMode: {
+        clicks: false,
+        forms: false,
+        scroll: false,
+      },
+      logLevel: 'debug',
+    }),
+  ],
 };

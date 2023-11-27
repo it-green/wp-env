@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack:development": "webpack --mode development -w",
     "wp-env:start": "wp-env start",
     "wp-env:update": "wp-env start --update",
     "wp-env:stop": "wp-env stop",
     "wp-env:destroy": "wp-env destroy",
     "sql:export": "wp-env run cli wp db export sql/wpenv.sql",
     "sql:import": "wp-env run cli wp db import sql/wpenv.sql",
-    "dev": "run-s wp-env:start sql:import webpack:development",
+    "dev": "run-s wp-env:start && webpack --mode development -w",
     "build": "webpack --mode development && node ./build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +32,8 @@
     "webpack-fix-style-only-entries": "^0.6.1"
   },
   "dependencies": {
+    "browser-sync": "^2.29.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
     "fs-extra": "^11.1.0",
     "sass": "^1.55.0"
   }
