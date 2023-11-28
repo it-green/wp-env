@@ -1,0 +1,6 @@
+# リセットCSS
+**/_reset.scss
+# SCSSのエントリーファイル
+**/_index.scss
+# minxの中のファイルを修正
+**/mixins/*.scss

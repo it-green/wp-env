@@ -1,0 +1,1 @@
+{"version":3,"file":"js/script.js","mappings":";;;AAAAA,QAAQC,IAAI","sources":["webpack://wp-env/./theme/js/entry/script.js"],"sourcesContent":["console.log('this is js file!');\n"],"names":["console","log"],"sourceRoot":""}

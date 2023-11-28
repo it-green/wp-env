@@ -1,0 +1,18 @@
+{
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass",
+    "stylus",
+  ],
+  "css.validate": false,
+  "scss.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+  },
+  "cSpell.words": [
+    "stylelint"
+  ]
+}

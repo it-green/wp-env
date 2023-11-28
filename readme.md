@@ -6,7 +6,7 @@
 $ npm i
 ```
 
-## 開発環境構築立ち上げ
+## 開発環境立ち上げ
 
 開発環境構築を立ち上げるには、DockerDesktop を起動する必要があります。
 
@@ -52,14 +52,6 @@ $ npm run wp-env:start
 
 ```
 $ npm run wp-env:stop
-```
-
-## webpack の起動
-
-WP の環境と同様に下記のコマンドで webpack のみを独立して動かすこともできる。
-
-```
-$ npm run webpack:development
 ```
 
 ## WP 環境のアップデート

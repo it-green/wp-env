@@ -1,17 +1,22 @@
-const { webpack } = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { SourceMap } = require('module');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'source-map',
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: {
-    'main': path.resolve(__dirname, './theme/js/main.js'),
-    'main.css': path.resolve(__dirname, './theme/scss/style.scss')
-  },
+  entry: WebpackWatchedGlobEntries.getEntries(
+    [
+      path.resolve(__dirname, 'theme/js/entry/**/*.js'),
+      path.resolve(__dirname, 'theme/scss/style.scss'),
+    ],
+  ),
 
   // ファイルの出力設定
   output: {
@@ -29,10 +34,22 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              url: true,
+              sourceMap: true,
+              importLoaders: 2,
+            },
           },
           {
-            loader: 'postcss-loader'
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ["autoprefixer", { grid: true }],
+                ],
+              },
+            },
           },
           {
             loader: 'resolve-url-loader',
@@ -40,18 +57,22 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
             }
-          }
+          },
         ],
       }
     ]
   },
 
   optimization: {
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-    })],
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+      new CssMinimizerPlugin(),
+    ],
+    minimize: true,
   },
 
   plugins: [
@@ -61,13 +82,31 @@ module.exports = {
         'js/**/*',
       ],
     }),
+
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]'
+      filename: 'css/[name].css'
+    }),
+
+    new WebpackWatchedGlobEntries(),
+
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      files: ['./**/*'],
+      port: 3000,
+      proxy: {
+        target: 'http://localhost:10011',
+      },
+      watchOptions: {
+        ignored: ['webpack.config.js', 'node_modules', 'sql', 'package.json', 'package-lock.json', 'php.ini', 'readme.md'],
+      },
+      open: true,
+      ghostMode: {
+        clicks: false,
+        forms: false,
+        scroll: false,
+      },
+      logLevel: 'debug',
     }),
   ],
-
-  watchOptions: {
-    ignored: /node_modules/
-  }
 };
