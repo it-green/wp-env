@@ -1,0 +1,1 @@
+{"version":3,"file":"js/top.js","mappings":";;;;AAAAA,QAAQC,IAAI,SAEZD,QAAQC,IADK,O","sources":["webpack://wp-env/./theme/js/entry/top.js"],"sourcesContent":["console.log('hogee');\nconst hoge = 'name';\nconsole.log(hoge);\n"],"names":["console","log"],"sourceRoot":""}

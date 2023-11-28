@@ -5,15 +5,18 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin');
 
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: {
-    'main': path.resolve(__dirname, './theme/js/main.js'),
-    'main.css': path.resolve(__dirname, './theme/scss/style.scss')
-  },
+  entry: WebpackWatchedGlobEntries.getEntries(
+    [
+      path.resolve(__dirname, 'theme/js/entry/**/*.js'),
+      path.resolve(__dirname, 'theme/scss/style.scss'),
+    ],
+  ),
 
   // ファイルの出力設定
   output: {
@@ -65,7 +68,7 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        extractComments: true,
+        extractComments: false,
       }),
       new CssMinimizerPlugin(),
     ],
@@ -82,8 +85,10 @@ module.exports = {
 
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]'
+      filename: 'css/[name].css'
     }),
+
+    new WebpackWatchedGlobEntries(),
 
     new BrowserSyncPlugin({
       host: 'localhost',
