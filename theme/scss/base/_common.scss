@@ -19,12 +19,6 @@ body {
   font-weight: $font-regular;
   line-height: 1;
   color: $color-black;
-
-  &__content {
-    font-family: $font-noto-sans;
-    font-weight: $font-bold;
-    color: $color-black;
-  }
 }
 
 .container {
@@ -32,9 +26,7 @@ body {
 }
 
 .content {
-  width: 80vw;
-  padding-right: 5rem;
-  padding-left: 5rem;
+  width: 90%;
   margin: 0 auto;
   color: $color-white;
 }
