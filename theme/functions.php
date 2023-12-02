@@ -10,12 +10,6 @@ function get_styles_script()
   // import google fonts
   wp_enqueue_style('google-fonts-noto-sans', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap', array(), false, 'all');
   wp_enqueue_style('google-fonts-robot', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap', array(), false, 'all');
-
-  // トップページで使用するスタイルとスクリプト
-  if (is_home()) {
-    // import script
-    wp_enqueue_script('top', get_template_directory_uri() . '/assets/js/top.js', array(), false, true);
-  }
 }
 
 // 画像パスを生成するための関数
