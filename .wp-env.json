@@ -3,7 +3,12 @@
   "plugins": [
     "https://downloads.wordpress.org/plugin/query-monitor.3.7.1.zip",
     "https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.9.zip",
-    "https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip"
+    "https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip",
+    "https://downloads.wordpress.org/plugin/wordpress-seo.21.5.zip",
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.79.zip",
+    "https://downloads.wordpress.org/plugin/siteguard.1.7.6.zip",
+    "https://downloads.wordpress.org/plugin/intuitive-custom-post-order.3.1.4.1.zip",
+    "https://downloads.wordpress.org/plugin/broken-link-checker.2.2.3.zip"
   ],
   "themes": [
     "./theme"
