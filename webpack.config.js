@@ -26,6 +26,15 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.css/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+          }
+        ],
+      },
       // sassのコンパイル設定
       {
         test: /\.(sa|sc|c)ss$/,
@@ -61,8 +70,15 @@ module.exports = {
             }
           },
         ],
+      },
+      // 画像をbase64にエンコーディング
+      {
+        // 対象となるファイルの拡張子
+        test: /\.(gif|webp|png|jpg|eot|wof|woff|ttf|svg)$/,
+        // 画像をBase64として取り込む
+        type: "asset/inline",
       }
-    ]
+    ],
   },
 
   optimization: {

@@ -35,6 +35,7 @@
     "stylelint-config-recess-order": "^4.4.0",
     "stylelint-config-standard-scss": "^11.1.0",
     "stylelint-prettier": "^4.1.0",
+    "sweet-scroll": "^4.0.0",
     "webpack": "^5.76.1",
     "webpack-cli": "^4.10.0",
     "webpack-fix-style-only-entries": "^0.6.1"
