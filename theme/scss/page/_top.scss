@@ -2,7 +2,7 @@
 @use "../mixins" as *;
 
 .fv {
-  background-color: $color-black;
+  background-image: url("../../assets/images/sample-bg.webp");
 
   .content {
     display: flex;
@@ -11,6 +11,6 @@
     height: 500px;
     font-family: $font-roboto;
     font-weight: $font-medium;
-    color: $color-white;
+    color: $color-black;
   }
 }
