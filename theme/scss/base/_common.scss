@@ -5,17 +5,17 @@ html {
   font-size: 16px;
 
   @include mq(sm) {
-    @include font-vw(16, 375);
+    @include font-vw(10, 375);
   }
 
   @include mq(md) {
-    @include font-vw(16, 720);
+    @include font-vw(10, 1280);
   }
 }
 
 body {
   font-family: $font-noto-sans;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: $font-regular;
   line-height: 1;
   color: $color-black;
