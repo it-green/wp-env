@@ -116,7 +116,7 @@ module.exports = {
       watchOptions: {
         ignored: ['webpack.config.js', 'node_modules', 'sql', 'package.json', 'package-lock.json', 'php.ini', 'readme.md'],
       },
-      open: true,
+      open: false,
       ghostMode: {
         clicks: false,
         forms: false,
