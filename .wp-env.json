@@ -11,7 +11,7 @@
     "https://downloads.wordpress.org/plugin/broken-link-checker.2.2.3.zip"
   ],
   "themes": [
-    "./theme"
+    "./my-theme"
   ],
   "port": 10011,
   "env": {

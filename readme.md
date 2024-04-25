@@ -1,10 +1,12 @@
 # ワードプレス開発環境
 
+
 ## 初期化
 
 ```
 $ npm i
 ```
+
 
 ## 開発環境立ち上げ
 
@@ -14,6 +16,7 @@ $ npm i
 $ npm run dev
 ```
 
+
 ## port
 
 開発環境構築のデフォルトのポートは、下記になります。
@@ -21,6 +24,7 @@ $ npm run dev
 ```
 http://localhost:10011/
 ```
+
 
 ## SQL の管理
 
@@ -32,6 +36,7 @@ WP のデータベースに更新がある場合は下記のコマンドを実�
 $ npm run sql:export
 ```
 
+
 ### SQL のデータを上書きする
 
 WP のデータベースの最新のものに更新するときは、下記のコマンドで sql ディレクトリの情報に上書きできる。
@@ -40,9 +45,36 @@ WP のデータベースの最新のものに更新するときは、下記の�
 $ npm run sql:import
 ```
 
+
+## 開発サーバー
+
+```
+http://localhost:3000（browserSync）
+```
+
+
+## 管理画面へのログイン
+
+```
+url: http://localhost:10011/wp-admin
+id: admin
+password: password
+```
+
+
+##　テーマファイルについて
+
+./my-theme ディレクトリの中身がWPの基本テーマになるので、こちらのフォルダで開発を行ってください。
+フォルダ名の変更を行った場合は、package.json, ./my-theme/style.css, .wp-env.json を修正する必要があります。
+
+
 ## WP 環境の立ち上げと停止
 
-$npm run dev では、ローカルサーバーの立ち上げとウェブパックによる SCSS/JS のトランスパイルを同時に動かせるが、下記のコマンドで別々に動かすこともできる。
+```
+$npm run dev
+```
+
+wp-envのみを起動することもできます。詳しくは `$npm run` を実行して、使用出来るスクリプトをかくにんしてください。
 
 ```
 $ npm run wp-env:start
@@ -53,6 +85,7 @@ $ npm run wp-env:start
 ```
 $ npm run wp-env:stop
 ```
+
 
 ## WP 環境のアップデート
 
