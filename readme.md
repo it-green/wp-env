@@ -65,7 +65,7 @@ password: password
 ## テーマファイルについて
 
 ./my-theme ディレクトリの中身がWPの基本テーマになるので、こちらのフォルダで開発を行ってください。
-フォルダ名の変更を行った場合は、package.json, ./my-theme/style.css, .wp-env.json を修正する必要があります。
+フォルダ名の変更を行った場合は、package.json, ./my-theme/style.css, .wp-env.json, webpack.config.json を修正する必要があります。
 
 
 ## WP環境の立ち上げと停止
