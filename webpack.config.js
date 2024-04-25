@@ -12,14 +12,14 @@ module.exports = {
   devtool: "source-map",
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: WebpackWatchedGlobEntries.getEntries([
-    path.resolve(__dirname, "theme/js/entry/**/*.js"),
-    path.resolve(__dirname, "theme/scss/style.scss"),
+    path.resolve(__dirname, "my-theme/js/entry/**/*.js"),
+    path.resolve(__dirname, "my-theme/scss/style.scss"),
   ]),
 
   // ファイルの出力設定
   output: {
     filename: "js/[name].js",
-    path: path.resolve(__dirname, "./theme/assets/"),
+    path: path.resolve(__dirname, "./my-theme/assets/"),
   },
 
   module: {
