@@ -1,0 +1,6 @@
+{
+  "require": {},
+  "config": {
+    "vendor-dir": "my-theme/vendor"
+  }
+}
